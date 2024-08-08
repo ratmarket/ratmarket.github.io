@@ -1,0 +1,511 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap');
+
+html, body {
+    scroll-padding-top: 40px;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --text-1: #FFF;
+    --background-1: #0C0C0C;
+    --accent-1: #EF233C; /* If you change this value, make sure to also change the value in theme-color meta tag in index.html */
+    --box-1: #161616;
+    --border-1: #313131;
+    --shadow-1: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    --shadow-2: 0px 4px 4px #ef233b1c;
+    --font-1: 'Poppins',sans-serif;
+    --section-mw: 900px;
+    --transition: 0.33s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    font-family: var(--font-1)
+}
+
+::selection {
+    background: #ef233b2d;
+    color: var(--accent-1);
+}
+
+body {
+    background: var(--background-1);
+    color: var(--text-1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+    height: 100vh;
+}
+
+.center {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    width: 100%;
+    max-width: var(--section-mw);
+    padding: 0 25px;
+}
+
+#hero {
+    max-height: 600px;
+}
+
+#hero .text {
+    text-align: center;
+    width: 100%;
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+#hero .text h1 {
+    font-weight: 600;
+    font-size: 65px;
+}
+
+#hero .text p {
+    font-weight: 400;
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+.underline:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: url(../images/underline-stroke.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#hero .text .button {
+    text-decoration: none;
+    color: var(--accent-1);
+    font-weight: 500;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 10px 26px;
+    border: 2px solid var(--accent-1);
+    border-radius: 30px;
+    width: fit-content;
+    user-select: none;
+    margin-top: 10px;
+    transition: var(--transition);
+}
+
+#hero .text .button span {
+    color: var(--text-1);
+}
+
+#hero .text .button i {
+    transition: var(--transition);
+}
+
+#hero .text .button:hover {
+    background: var(--accent-1);
+    transform: scale(1.05);
+    box-shadow: var(--shadow-2);
+}
+
+#hero .text .button:hover i {
+    color: var(--text-1);
+}
+
+#hero .text .button:active {
+    transform: scale(1);
+}
+
+#header {
+    width: calc(100% - 25px * 2);
+    height: 70px;
+    background: var(--box-1);
+    border: 1px solid var(--border-1);
+    box-shadow: var(--shadow-1);
+    border-radius: 1000px;
+    margin: 25px 0 0;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 15px;
+}
+
+#header .links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+#header .links .link {
+    text-decoration: none;
+    color: var(--text-1);
+    font-weight: 500;
+    font-size: 15px;
+    user-select: none;
+}
+
+#header .links .link:after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: url(../images/underline-stroke.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+#header .links .link:hover:after {
+    opacity: 1;
+}
+
+#header .discord {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+#header .discord .button {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    border-radius: 100%;
+    border: 2px solid var(--accent-1);
+    color: var(--accent-1);
+    text-decoration: none;
+    padding: 5px;
+    transition: var(--transition);
+}
+
+#header .discord .button:hover {
+    background: var(--accent-1);
+    color: var(--text-1);
+    box-shadow: var(--shadow-2);
+}
+
+.section-title {
+    text-align: center;
+}
+
+.section-title h1 {
+    font-size: 32px;
+}
+
+.section-title h1.underline:after {
+    bottom: -25px;
+}
+
+#whyus, #pricing, #reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+#whyus .why {
+    background: var(--box-1);
+    border: 1px solid var(--border-1);
+    box-shadow: var(--shadow-1);
+    padding: 18px;
+    border-radius: 12px;
+    min-height: 120px;
+    overflow: hidden;
+}
+
+#whyus .why p {
+    font-size: 14px;
+    z-index: 2;
+}
+
+#whyus .why h1 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 5px 15px;
+    z-index: 1;
+    font-size: 24px;
+    -webkit-text-stroke: 1px var(--border-1);
+    opacity: 0.6;
+    color: transparent;
+    text-transform: uppercase;
+}
+
+#pricing .prices {
+    display: flex;
+    gap: 25px;
+    width: 100%;
+}
+
+#pricing .price {
+    background: var(--box-1);
+    border: 1px solid var(--border-1);
+    box-shadow: var(--shadow-1);
+    padding: 18px;
+    border-radius: 12px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#pricing .price .gradient {
+    --size: min(15vw, 200px);
+    --top: 0;
+    --right: calc(-0.5 * var(--size));
+    --blur: calc(0.5 * var(--size));
+    --opacity: 0.5;
+    position: absolute;
+    border-radius: calc(.5 * var(--size));
+    background-color: var(--accent-1);
+    background: radial-gradient(circle at center, var(--accent-1), var(--accent-1));
+    width: var(--size);
+    height: var(--size);
+    top: var(--top);
+    right: var(--right);
+    filter: blur(var(--blur)) opacity(var(--opacity));
+}
+
+#pricing .price:last-child .gradient {
+    left: var(--right);
+}
+
+#pricing .price:last-child .feature {
+    flex-direction: row-reverse;
+}
+
+#pricing .price .top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#pricing .price .top h1 {
+    font-size: 36px;
+    line-height: 1.2;
+}
+
+#pricing .price .top span {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+#pricing .price .features {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#pricing .price .feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#pricing .price .feature i {
+    color: var(--accent-1);
+    font-size: 12px;
+}
+
+#pricing .price .feature p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+#pricing .price .purchase {
+    padding: 8px 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    border: 2px solid var(--accent-1);
+    color: var(--background);
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 1000px;
+    box-shadow: var(--shadow-2);
+    user-select: none;
+    transition: var(--transition);
+}
+
+#pricing .price .purchase i {
+    color: var(--accent-1);
+}
+
+#pricing .price .purchase i {
+    transition: var(--transition);
+}
+
+#pricing .price .purchase:hover {
+    background: var(--accent-1);
+    transform: scale(1.02);
+    box-shadow: var(--shadow-2);
+}
+
+#pricing .price .purchase:hover i {
+    color: var(--text-1);
+}
+
+#pricing .price .purchase:active {
+    transform: scale(1);
+}
+
+#reviews .review {
+    background: var(--box-1);
+    border: 1px solid var(--border-1);
+    box-shadow: var(--shadow-1);
+    padding: 18px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px
+}
+
+#reviews .review .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+#reviews .review .row .stars {
+    font-size: 14px;
+    color: var(--accent-1);
+}
+
+#reviews .review .author {
+    display: flex;
+    flex-direction: column;
+    gap: 2px
+}
+
+#reviews .review .author .name {
+    font-size: 16px;
+    font-weight: 500
+}
+
+#reviews .review .author .tag {
+    font-size: 13px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 4px
+}
+
+#reviews .review .author .tag i {
+    color: var(--accent-1);
+}
+#reviews .review .content
+#reviews .review .author .tag span {
+    opacity: 0.8;
+}
+
+#reviews .review .content {
+    font-size: 14px;
+    font-weight: 400;
+    opacity: .8
+}
+
+#reviews {
+    padding-bottom: 100px;
+}
+
+@media screen and (max-width: 1000px) {
+    #hero .text h1 {
+        font-size: 46px;
+    }
+
+    .section-title h1 {
+        font-size: 26px;
+    }
+    
+    #hero .text p {
+        font-size: 16px;
+        opacity: 0.8;
+    }
+
+    #hero .text .button,
+    #header .links .link,
+    #reviews .review .author .name {
+        font-size: 14px;
+    }
+
+    #whyus .why p,
+    #pricing .price .feature p,
+    #pricing .price .purchase,
+    #reviews .review .content,
+    #reviews .review .row .stars {
+        font-size: 13px;
+    }
+
+    #reviews .review .author .tag {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    #pricing .prices {
+        flex-direction: column;
+    }
+
+    #pricing .price .gradient {
+        --size: min(50vw, 200px); 
+    }
+
+    #hero .text h1 {
+        font-size: 36px;
+    }
+    
+    #hero .text p {
+        font-size: 14px;
+        opacity: 0.8;
+    }
+
+    #hero .text .button {
+        font-size: 13px;
+    }
+
+    #header .links {
+        display: none;
+    }
+}
